@@ -1,7 +1,6 @@
 #root {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
   text-align: center;
 }
 
@@ -39,4 +38,19 @@
 
 .read-the-docs {
   color: #888;
+}
+
+table, th, td {
+  border: 1px solid;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+.ranking-cotainer {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 2;
+  flex-wrap: wrap;
 }

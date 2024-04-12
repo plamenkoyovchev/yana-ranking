@@ -5,22 +5,22 @@ export const gardenIds = [
 		id: 6179,
 		name: "Detski svyat 78",
 	},
-	// {
-	// 	id: 6970,
-	// 	name: "Prikazka bez krai 72",
-	// },
-	// {
-	// 	id: 6273,
-	// 	name: "Slunchice 79",
-	// },
-	// {
-	// 	id: 7986,
-	// 	name: "Novata 190 (s mnogoto mesta)",
-	// },
-	// {
-	// 	id: 7761,
-	// 	name: "Prikazen svyat 16",
-	// },
+	{
+		id: 6970,
+		name: "Prikazka bez krai 72",
+	},
+	{
+		id: 6273,
+		name: "Slunchice 79",
+	},
+	{
+		id: 7986,
+		name: "Novata 190 (s mnogoto mesta)",
+	},
+	{
+		id: 7761,
+		name: "Prikazen svyat 16",
+	},
 ];
 
 export const data = {
