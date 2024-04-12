@@ -3,30 +3,42 @@ import { gardenIds } from './data';
 
 const url = "https://kg.sofia.bg/api/stat-rating/waiting";
 
+const getRankings = async () => {
+    try {
+        let result = [];
+        for (let item of gardenIds) {
+            const { id, name } = item;
+            const response = await fetch(`${url}/${id}`);
+            const data = await response.json();
+
+            result = [
+                ...result,
+                {
+                    id,
+                    name,
+                    items: {
+                        ...data.items,
+                        listCommon: [...data.items.listCommon.slice(0, 60)],
+                    },
+                },
+            ];
+        }
+
+        return result;
+    } catch (err) {
+        console.error(err);
+        return [];
+    }
+};
+
 const Ranking = () => {
     const [ranking, setRanking] = useState([]);
     const [selectedNum, setSelectedNum] = useState(null);
 
     useEffect(() => {
         const fetchData = async () => {
-            gardenIds.map(async ({ id, name }) => {
-                const response = await fetch(`${url}/${id}`);
-                const data = await response.json();
-
-                if (!ranking.find(r => r.id == id)) {
-                    setRanking((prevState) => [
-                        ...prevState,
-                        {
-                            id,
-                            name,
-                            items: {
-                                ...data.items,
-                                listCommon: [...data.items.listCommon.slice(0, 60)]
-                            },
-                        },
-                    ]);
-                }
-            });
+            const result = await getRankings();
+            setRanking(result);
         };
 
         fetchData();
