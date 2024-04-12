@@ -5,6 +5,7 @@ const url = "https://kg.sofia.bg/api/stat-rating/waiting";
 
 const Ranking = () => {
     const [ranking, setRanking] = useState([]);
+    const [selectedNum, setSelectedNum] = useState(null);
 
     useEffect(() => {
         const fetchData = async () => {
@@ -31,6 +32,8 @@ const Ranking = () => {
         fetchData();
     }, []);
 
+    const onRowClickHandler = (num) => setSelectedNum(num);
+
     return (
         <div className="ranking-cotainer">
             {ranking?.length &&
@@ -54,7 +57,11 @@ const Ranking = () => {
                                     {item.items?.listCommon?.length &&
                                         item.items.listCommon.map((r, index) => {
                                             return (
-                                                <tr key={r.id}>
+                                                <tr
+                                                    key={r.id}
+                                                    onClick={() => onRowClickHandler(r.childNum)}
+                                                    className={selectedNum === r.childNum ? 'selected' : ''}
+                                                >
                                                     <td>{++index}</td>
                                                     <td>{r.childNum}</td>
                                                     <td>

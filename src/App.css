@@ -54,3 +54,11 @@ table {
   gap: 2;
   flex-wrap: wrap;
 }
+
+table tr:hover{
+  cursor: pointer;
+}
+
+table tr.selected {
+  background-color: coral;
+}
