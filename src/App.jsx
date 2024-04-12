@@ -1,5 +1,5 @@
 import './App.css'
-import Ranking from './Ranking';
+import RankingPage from './RankingPage';
 
 function App() {
 
@@ -7,7 +7,7 @@ function App() {
     <>
       <h1>Класиране</h1>
       <hr />
-      <Ranking />
+      <RankingPage />
     </>
   )
 }
