@@ -85,6 +85,10 @@ const RankingPage = () => {
 
     const onRowClickHandler = (num) => setSelectedNum(num);
 
+    if (!ranking.length) {
+        return <div><h1>Loading...</h1></div>;
+    }
+
     return (
         <div className="ranking-cotainer">
             {ranking?.length &&
