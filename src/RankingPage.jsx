@@ -50,7 +50,12 @@ const RankingTable = ({ items, onClickHandler, selectedNum }) => {
                         <tr
                             key={r.id}
                             onClick={() => onClickHandler(r.childNum)}
-                            className={selectedNum === r.childNum ? "selected" : ""}
+                            className={
+                                selectedNum === r.childNum
+                                    ? "selected"
+                                    : r.childNum === "21005924"
+                                        ? "yana"
+                                        : ""}
                         >
                             <td>{++index}</td>
                             <td>{r.childNum}</td>
