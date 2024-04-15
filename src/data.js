@@ -20,7 +20,19 @@ export const gardenIds = [
 	{
 		id: 7761,
 		name: "Prikazen svyat 16",
-	},
+    },
+    {
+        id: 6075,
+        name: "Prikazen svyat 16 (sgrada 2)"
+    },
+    {
+        id: 6290,
+        name: "Cheburashka 10"
+    },
+    {
+        id: 6180,
+        name: "Liliya 12"
+    },
 ];
 
 export const data = {
